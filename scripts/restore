@@ -46,7 +46,7 @@ ynh_psql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < ./d
 ynh_script_progression --message="Installing xxHash..."
 
 tempdir="$(mktemp -d)"
-ynh_setup_source --dest_dir=$tempdir --source_id="libxxhash"
+ynh_setup_source --dest_dir=$tempdir --source_id="libxxhash" --full_replace=1
 pushd $tempdir
 	make
 	make install
